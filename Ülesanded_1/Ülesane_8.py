@@ -1,17 +1,25 @@
 import random
 
-items = ['молоко', 'хлеб', 'яйца', 'сыр', 'вода']
-quantities = []
 total_cost = 0
-print('Добро пожаловать в магазин!\n', '-------------------------------')
-for item in items:
-    quantity = input(f'Сколько штук {item} вы хотите купить? ')
-    quantity = int(quantity)
-    quantities.append(quantity)
-print('\nЧек:\n', '-------------------------------')
-for item, quantity in zip(items, quantities):
-    price = random.uniform(5, 15)
-    cost = price * quantity
-    total_cost += cost
-    print(f'{item}: {quantity} шт. x {price:.2f} руб. = {cost:.2f} руб.')
-print('-------------------------------\n', f'Итого: {total_cost:.2f} руб.')
+print('Добро пожаловать в магазин!')
+
+choise = input('Желаете ли вы купить молоко? (ответ: да или нет) ')
+if choise == 'да':
+    total = int(input('Сколько вы хотите купить? '))
+    mcost = total * float(random.uniform(0.50, 2.0))
+elif choise == 'да':
+    total = int(input('Сколько вы хотите купить? '))
+    ecost = total * float(random.uniform(1.0, 3.0))
+elif choise == 'да':
+    total = int(input('Сколько вы хотите купить? '))
+    bcost = total * float(random.uniform(1.2, 2.5))
+
+print('-------------------------')
+if 'mcost' in locals():
+    print(f'Milk Cost: {mcost}')
+if 'ecost' in locals():
+    print(f'Egg Cost: {ecost}')
+if 'bcost' in locals():
+    print(f'Bread Cost: {bcost}')
+
+
